@@ -2,7 +2,6 @@ ARG ES_VERSION
 FROM docker.elastic.co/elasticsearch/elasticsearch:$ES_VERSION as builder
 
 USER root
-ENV DEBIAN_FRONTEND=noninteractive
 
 RUN microdnf update -y && microdnf install -y cmake git wget tar gcc gcc-c++ make automake autoconf
 
@@ -19,7 +18,7 @@ RUN cmake -DBUILD_JAVA=1 ..
 RUN make install
 
 # Build analysis-vietnamese
-RUN echo "analysis-vietnamese..wssssssdffafsfssdasfafsafssdssssswqrwq3rwq.sdsaf"
+RUN echo "install analysis-vietnamesesd"
 WORKDIR /tmp
 RUN wget https://dlcdn.apache.org/maven/maven-3/3.8.8/binaries/apache-maven-3.8.8-bin.tar.gz \
     && tar xvf apache-maven-3.8.8-bin.tar.gz

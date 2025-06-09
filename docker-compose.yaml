@@ -2,10 +2,11 @@ version: '3.4'
 
 services:
   elasticsearch:
-    build:
-      context: .
-      args:
-        ES_VERSION: ${ES_VERSION}
+    image: vi-elasticsearch:9.0.1
+    # build:
+    #   context: .
+    #   args:
+    #     ES_VERSION: ${ES_VERSION}
     restart: on-failure
     ports:
       - "9200:9200"
