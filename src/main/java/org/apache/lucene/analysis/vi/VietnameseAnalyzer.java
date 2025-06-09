@@ -19,6 +19,11 @@ import org.elasticsearch.analysis.VietnameseConfig;
 
 import java.io.IOException;
 
+// --- ADD THIS IMPORT ---
+import java.io.InputStreamReader;
+// --- AND ADD THIS IMPORT ---
+import java.nio.charset.StandardCharsets;
+
 /**
  * {@link Analyzer} for Vietnamese language
  *
