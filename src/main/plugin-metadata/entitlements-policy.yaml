@@ -1,0 +1,6 @@
+versions:
+  - 9.1.0
+policy:
+  java.desktop:
+    - manage_threads
+    - load_native_libraries
