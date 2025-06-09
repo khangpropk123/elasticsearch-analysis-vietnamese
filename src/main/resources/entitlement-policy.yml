@@ -1,2 +1,4 @@
+# Use 'ALL-UNNAMED' because your plugin is not a Java module, as indicated by the log.
 ALL-UNNAMED:
+  # This is the permission your plugin needs to load its native code.
   - load_native_libraries
