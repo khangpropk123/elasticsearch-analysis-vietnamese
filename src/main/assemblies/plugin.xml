@@ -21,7 +21,6 @@
             <outputDirectory>/</outputDirectory>
             <includes>
                 <include>plugin-descriptor.properties</include>
-                <include>plugin-security.policy</include>
                 <include>entitlement-policy.yaml</include>
             </includes>
             <filtered>true</filtered> <!-- This enables property replacement (e.g., ${project.version}) -->
