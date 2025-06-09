@@ -22,7 +22,7 @@
             <directory>${project.build.outputDirectory}</directory>
             <outputDirectory>/</outputDirectory>
             <includes>
-                <!-- <include>plugin-descriptor.properties</include> -->
+                <include>plugin-descriptor.properties</include>
                   <include>entitlement-policy.yaml</include>
             </includes>
         </fileSet>
