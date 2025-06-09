@@ -18,24 +18,17 @@
         </fileSet>
 
         <!-- Item 2: Add the filtered plugin-descriptor.properties -->
-        <!-- <fileSet>
+        <fileSet>
             <directory>${project.build.outputDirectory}</directory>
             <outputDirectory>/</outputDirectory>
             <includes>
                 <include>plugin-descriptor.properties</include>
+                  <include>entitlement-policy.yaml</include>
             </includes>
-        </fileSet> -->
+        </fileSet>
 
         <!-- Item 3: Add the entitlement-policy.yaml directly from the source -->
         <!-- This is the most direct and reliable way -->
-        <fileSet>
-            <directory>src/main/resources</directory>
-            <outputDirectory>/</outputDirectory>
-            <includes>
-                <include>entitlement-policy.yaml</include>
-            </includes>
-            <filtered>false</filtered> <!-- Explicitly disable filtering for this file -->
-        </fileSet>
     </fileSets>
 
     <!-- Item 4: Add all runtime dependencies -->
