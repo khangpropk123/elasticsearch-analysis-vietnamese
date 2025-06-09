@@ -33,12 +33,12 @@ WORKDIR /elasticsearch-analysis-vietnamese
 RUN mvn verify clean --fail-never
 RUN mvn --batch-mode -Dmaven.test.skip -e package -DprojectVersion=$ES_VERSION
 
-# FROM docker.elastic.co/elasticsearch/elasticsearch:$ES_VERSION
-# ARG ES_VERSION
-# ARG COCCOC_INSTALL_PATH=/usr/local
-# ARG COCCOC_DICT_PATH=$COCCOC_INSTALL_PATH/share/tokenizer/dicts
+FROM docker.elastic.co/elasticsearch/elasticsearch:$ES_VERSION
+ARG ES_VERSION
+ARG COCCOC_INSTALL_PATH=/usr/local
+ARG COCCOC_DICT_PATH=$COCCOC_INSTALL_PATH/share/tokenizer/dicts
 
-# COPY --from=builder $COCCOC_INSTALL_PATH/lib/libcoccoc_tokenizer_jni.so /usr/lib
-# COPY --from=builder $COCCOC_DICT_PATH $COCCOC_DICT_PATH
-# COPY --from=builder /elasticsearch-analysis-vietnamese/target/releases/elasticsearch-analysis-vietnamese-$ES_VERSION.zip /
-# RUN echo "Y" | /usr/share/elasticsearch/bin/elasticsearch-plugin install --batch file:///elasticsearch-analysis-vietnamese-$ES_VERSION.zip
+COPY --from=builder $COCCOC_INSTALL_PATH/lib/libcoccoc_tokenizer_jni.so /usr/lib
+COPY --from=builder $COCCOC_DICT_PATH $COCCOC_DICT_PATH
+COPY --from=builder /elasticsearch-analysis-vietnamese/target/releases/elasticsearch-analysis-vietnamese-$ES_VERSION.zip /
+RUN echo "Y" | /usr/share/elasticsearch/bin/elasticsearch-plugin install --batch file:///elasticsearch-analysis-vietnamese-$ES_VERSION.zip
