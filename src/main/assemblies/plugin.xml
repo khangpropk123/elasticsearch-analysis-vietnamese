@@ -5,21 +5,28 @@
         <format>zip</format>
     </formats>
     <includeBaseDirectory>false</includeBaseDirectory>
-    <files>
-        <file>
-            <source>${project.basedir}/src/main/resources/plugin-descriptor.properties</source>
-            <filtered>true</filtered>
-        </file>
-         <file>
-            <source>${project.basedir}/src/main/resources/entitlement-policy.yaml</source>
-            <filtered>true</filtered>
-        </file>
-        <file>
-            <source>${project.basedir}/src/main/resources/plugin-security.policy</source>
-            <filtered>true</filtered>
-        </file>
+     <!-- Add the plugin's compiled JAR to the root of the ZIP -->
+    <fileSets>
+        <fileSet>
+            <directory>${project.build.directory}</directory>
+            <outputDirectory>/</outputDirectory>
+            <includes>
+                <include>*.jar</include>
+            </includes>
+        </fileSet>
 
-    </files>
+        <!-- Add metadata files from src/main/resources to the root of the ZIP -->
+        <fileSet>
+            <directory>${project.build.resources[0].directory}</directory>
+            <outputDirectory>/</outputDirectory>
+            <includes>
+                <include>plugin-descriptor.properties</include>
+                <include>plugin-security.policy</include>
+                <include>entitlement-policy.yaml</include>
+            </includes>
+            <filtered>true</filtered> <!-- This enables property replacement (e.g., ${project.version}) -->
+        </fileSet>
+    </fileSets>
     <dependencySets>
         <dependencySet>
             <useProjectArtifact>true</useProjectArtifact>
