@@ -1,6 +1,6 @@
 # Vietnamese Analysis Plugin for Elasticsearch 9.0.1
 
-SOME COMMIT MESSAGE TESTING, PLEASE IGNORE!
+SOME COMMIT MESSAGE FOR TESTING, PLEASE IGNORE!
 
 FORK FROM https://github.com/duydo/elasticsearch-analysis-vietnamese
 
