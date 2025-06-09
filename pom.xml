@@ -68,21 +68,9 @@
     </dependencies>
     <build>
         <resources>
-            <!-- Resource 1: Handle the descriptor file and apply filtering -->
             <resource>
                 <directory>src/main/resources</directory>
                 <filtering>true</filtering>
-                <includes>
-                    <include>plugin-descriptor.properties</include>
-                </includes>
-            </resource>
-            <!-- Resource 2: Handle the entitlement policy and do NOT filter it -->
-            <resource>
-                <directory>src/main/resources</directory>
-                <filtering>false</filtering>
-                <includes>
-                    <include>entitlement-policy.yaml</include>
-                </includes>
             </resource>
         </resources>
         <plugins>
