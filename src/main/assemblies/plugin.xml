@@ -21,11 +21,19 @@
             <outputDirectory>/</outputDirectory>
             <includes>
                 <include>plugin-descriptor.properties</include>
-                <include>entitlement-policy.yaml</include>
             </includes>
             <filtered>true</filtered> <!-- This enables property replacement (e.g., ${project.version}) -->
         </fileSet>
     </fileSets>
+     <files>
+        <!-- This is the new, crucial part -->
+        <!-- Add the entitlement-policy.yaml -->
+        <file>
+            <source>${project.build.outputDirectory}/entitlement-policy.yaml</source>
+            <outputDirectory>/</outputDirectory>
+            <destName>entitlement-policy.yaml</destName>
+        </file>
+    </files>
     <dependencySets>
         <dependencySet>
             <useProjectArtifact>true</useProjectArtifact>
