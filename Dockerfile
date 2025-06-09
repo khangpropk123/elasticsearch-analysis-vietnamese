@@ -19,7 +19,7 @@ RUN cmake -DBUILD_JAVA=1 ..
 RUN make install
 
 # Build analysis-vietnamese
-RUN echo "analysis-vietnamese..."
+RUN echo "analysis-vietnamese..wssss."
 WORKDIR /tmp
 RUN wget https://dlcdn.apache.org/maven/maven-3/3.8.8/binaries/apache-maven-3.8.8-bin.tar.gz \
     && tar xvf apache-maven-3.8.8-bin.tar.gz
