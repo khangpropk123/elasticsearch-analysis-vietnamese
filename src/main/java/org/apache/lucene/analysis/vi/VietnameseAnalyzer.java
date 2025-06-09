@@ -53,13 +53,21 @@ public class VietnameseAnalyzer extends StopwordAnalyzerBase {
     private static class DefaultSetHolder {
         static final CharArraySet DEFAULT_STOP_SET;
 
-        static {
+         static {
             try {
-                DEFAULT_STOP_SET = loadStopwordSet(false, VietnameseAnalyzer.class, DEFAULT_STOPWORDS_FILE, STOPWORDS_COMMENT);
+                // THIS IS THE FIX: The old loadStopwordSet method is replaced.
+                // We now get the resource as a stream, wrap it in a Reader with UTF-8 encoding,
+                // and pass it to the modern loadStopwordSet method.
+                DEFAULT_STOP_SET = loadStopwordSet(
+                    new InputStreamReader(
+                        VietnameseAnalyzer.class.getResourceAsStream(DEFAULT_STOPWORDS_FILE),
+                        StandardCharsets.UTF_8
+                    )
+                );
             } catch (IOException ex) {
                 // default set should always be present as it is part of the
                 // distribution (JAR)
-                throw new RuntimeException("Unable to load default stopword set");
+                throw new RuntimeException("Unable to load default stopword set", ex);
             }
         }
     }
