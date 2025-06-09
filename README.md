@@ -1,7 +1,15 @@
-# Vietnamese Analysis Plugin for Elasticsearch
+# Vietnamese Analysis Plugin for Elasticsearch 9.0.1
 
-[![Test](https://github.com/duydo/elasticsearch-analysis-vietnamese/actions/workflows/test.yml/badge.svg)](https://github.com/duydo/elasticsearch-analysis-vietnamese/actions/workflows/test.yml)
+SOME COMMIT MESSAGE TESTING, PLEASE IGNORE!
 
+FORK FROM https://github.com/duydo/elasticsearch-analysis-vietnamese
+
+MODIFY TO SUPPORT VERSION 9.0.X
+
+Build Docker image:
+```Dockerfile
+docker build --build-arg ES_VERSION=9.0.1 -t vi-elasticsearch:9.0.1 .
+```
 Vietnamese Analysis plugin integrates Vietnamese language analysis into Elasticsearch. It uses [C++ tokenizer for Vietnamese](https://github.com/coccoc/coccoc-tokenizer) library developed by
 CocCoc team for their Search Engine and Ads systems.
 
@@ -190,36 +198,7 @@ I don't maintain the plugin with the VnTokenizer anymore, if you want to continu
 
 | Vietnamese Analysis Plugin | Elasticsearch   |
 |----------------------------|-----------------|
-| master                     | 8.7.0           |
-| develop                    | 8.7.0           |
-| 8.7.0                      | 8.7.0           |
-| 8.4.0                      | 8.4.0 ~ 8.7.1   |
-| 8.0.0                      | 8.0.0 ~ 8.0.x   |
-| 7.16.1                     | 7.16 ~ 7.17.1   |
-| 7.12.1                     | 7.12.1 ~ 7.15.x |     
-| 7.3.1                      | 7.3.1           |   
-| 5.6.5                      | 5.6.5           |
-| 5.4.1                      | 5.4.1           |
-| 5.3.1                      | 5.3.1           |
-| 5.2.1                      | 5.2.1           |
-| 2.4.1                      | 2.4.1           |
-| 2.4.0                      | 2.4.0           |
-| 2.3.5                      | 2.3.5           |
-| 2.3.4                      | 2.3.4           |
-| 2.3.3                      | 2.3.3           |
-| 2.3.2                      | 2.3.2           |
-| 2.3.1                      | 2.3.1           |
-| 2.3.0                      | 2.3.0           |
-| 0.2.2                      | 2.2.0           |
-| 0.2.1.1                    | 2.1.1           |
-| 0.2.1                      | 2.1.0           |
-| 0.2                        | 2.0.0           |
-| 0.1.7                      | 1.7+            |
-| 0.1.6                      | 1.6+            |
-| 0.1.5                      | 1.5+            |
-| 0.1.1                      | 1.4+            |
-| 0.1                        | 1.3             |
-
+| master                     | 9.0.1         |
 
 ## Issues
 
